@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<p><strong>Lists</strong></p>
+<ul class="list-group">
+  <% @list.bookmarks.each do |list| %>
+    <li class="list-group-item">
+      <%= list.content %>
+      <%= link_to "Delete",
+        review_list(list),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+      %>
+    </li>
+  <% end %>
+</ul>
+<br>
